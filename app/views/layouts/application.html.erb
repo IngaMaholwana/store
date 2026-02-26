@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <%# ... %>
+  <head>
+    <title>Store</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", type: "module", "data-turbo-track": "reload", defer: true %>
+  </head>
   <body>
     <nav>
       <%= link_to "Home", root_path %>
       <%= button_to "Log out", session_path, method: :delete if authenticated? %>
     </nav>
+
     <div class="notice"><%= flash[:notice] %></div>
     <div class="alert"><%= flash[:alert] %></div>
-
 
     <main>
       <%= yield %>
