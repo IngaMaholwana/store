@@ -1,5 +1,8 @@
 module Settings
-  class PasswordsController < ApplicationController
+  
+
+class Settings::PasswordsController < Settings::BaseController
+
     def show
     end
 
@@ -17,9 +20,5 @@ module Settings
         p[:password_challenge] ||= ""
         p
       end
-  end
-end
-class Settings::PasswordsController < ApplicationController
-  def show
   end
 end
