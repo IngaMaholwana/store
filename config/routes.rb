@@ -5,11 +5,10 @@ Rails.application.routes.draw do
   root "products#index"
 
   resources :products do
-
     resources :subscribers, only: [ :create ]
   end
   resource :unsubscribe, only: [ :show ]
   namespace :settings do
-    resource :password, only: [ :edit, :update ]
+    resource :password, only: [ :show, :edit, :update ]
   end
 end

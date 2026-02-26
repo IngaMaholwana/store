@@ -17,6 +17,10 @@ class PasswordsController < ApplicationController
   def edit
   end
 
+  def show
+  end
+
+
   def update
     if @user.update(params.permit(:password, :password_confirmation))
       @user.sessions.destroy_all
@@ -25,6 +29,20 @@ class PasswordsController < ApplicationController
       redirect_to edit_password_path(params[:token]), alert: "Passwords did not match."
     end
   end
+
+  def update
+    if Current.user.update(password_params)
+      redirect_to settings_profile_path, status: :see_other, notice: "Your password has been updated."
+    else
+      render :show, status: :unprocessable_entity
+    end
+  end
+
+  private
+    def password_params
+      params.expect(user: [ :password, :password_confirmation, :password_challenge ]).with_defaults(password_challenge: "")
+    end
+
 
   private
     def set_user_by_token
