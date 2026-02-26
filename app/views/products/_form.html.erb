@@ -1,9 +1,14 @@
 <%= form_with model: product do |form| %>
-  <%# ... %>
+  <% if form.object.errors.any? %>
+    <p class="error"><%= form.object.errors.full_messages.first %></p>
+  <% end %>
 
   <div>
-    <%= form.label :featured_image, style: "display: block" %>
-    <%= form.file_field :featured_image, accept: "image/*" %>
+    <%= form.label :inventory_count, style: "display: block" %>
+    <%= form.number_field :inventory_count %>
+    <%# this was removed in the tut %>
+    <%= form.file_field :featured_image, accept: "image/*" %> 
+
   </div>
 
   <div>
