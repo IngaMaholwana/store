@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   end
   resource :unsubscribe, only: [ :show ]
   namespace :settings do
-    resource :password, only: [ :show, :edit, :update ]
+    resource :password, only: [ :show, :update ]
+    resource :profile, only: [ :show, :update ]
+
+    root to: redirect("/settings/profile")
   end
 end
