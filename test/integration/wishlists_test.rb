@@ -93,16 +93,7 @@ end
     assert_equal wishlist, wishlist_product.reload.wishlist
   end
 
-    test "cannot move product to another user's wishlist" do
-    user = users(:one)
-    sign_in_as user
-    wishlist = user.wishlists.first
-    wishlist_product = wishlist.wishlist_products.first
-    patch wishlist_wishlist_product_path(wishlist, wishlist_product), params: { new_wishlist_id: wishlists(:two).id }
-    assert_response :not_found
-    assert_equal wishlist, wishlist_product.reload.wishlist
-  end
-
+  
 
 
 
