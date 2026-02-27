@@ -57,3 +57,115 @@ section.settings nav {
 section.settings nav a {
   display: block;
 }
+
+/* Additional site-wide styles */
+
+/* Headings */
+h1, h2, h3 {
+  color: #222;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Links and buttons */
+a {
+  color: #0366d6;
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+button, input[type=submit], .button {
+  background: #0366d6;
+  color: #fff;
+  border: none;
+  padding: 0.45rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+button.secondary, .button.secondary, input[type=button].secondary {
+  background: #eee;
+  color: #222;
+}
+
+/* Forms */
+label { display: block; margin-bottom: 0.25rem; color: #333; }
+input[type=text], input[type=email], input[type=password], input[type=number], textarea, .trix-content, .rich-text {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-bottom: 0.75rem;
+}
+
+.form-row { margin-bottom: 1rem; }
+
+/* Flash messages */
+.notice, .flash-notice {
+  background: #e6ffed;
+  border: 1px solid #c1f0c7;
+  color: #0a610a;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+.alert, .flash-alert {
+  background: #fff0f0;
+  border: 1px solid #f2c2c2;
+  color: #8b0000;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+/* Product card styling */
+section.product {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 1rem;
+  border-radius: 8px;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+section.product .product-details, section.product .product-info {
+  flex: 1 1 50%;
+}
+
+section.product h2, section.product h1 { margin-top: 0; }
+
+/* Settings layout */
+section.settings {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+section.settings nav {
+  width: 220px;
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+section.settings nav h4 { margin-top: 0; margin-bottom: 0.75rem; }
+
+section.settings > div { flex: 1; }
+
+/* Responsive */
+@media (max-width: 700px) {
+  nav.navbar { justify-content: space-between; padding: 0.5rem; }
+  section.product { flex-direction: column; }
+  section.product img { max-width: 100%; flex-basis: auto; }
+  section.settings { flex-direction: column; }
+  section.settings nav { width: 100%; }
+}
+
+/* Small utilities */
+.muted { color: #777; font-size: 0.95rem; }
+.container { max-width: 1024px; margin: 0 auto; }
+
