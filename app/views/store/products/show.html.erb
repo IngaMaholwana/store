@@ -16,3 +16,8 @@
 
   </section>
 </section>
+
+<section>
+  <%= link_to pluralize(@product.wishlists_count, "wishlist"), store_wishlists_path(product_id: @product) %>
+  <%= link_to pluralize(@product.subscribers.count, "subscriber"), store_subscribers_path(product_id: @product) %>
+</section>
